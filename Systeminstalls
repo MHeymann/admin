@@ -1,0 +1,99 @@
+sudo apt-get update
+
+sudo apt-get install synaptic
+
+#### pynetkey  ##################################################################
+
+sudo apt-get install python-appindicator
+sudo apt-get install libgnome2-bin
+gnome-open ~/Prog/pynetkey20120905.deb
+
+#### java  ######################################################################
+
+
+sudo su
+mkdir /opt/jdk
+tar -zxf ~/Prog/java/jdk*.tar.gz -C /opt/jdk
+ls /opt/jdk
+update-alternatives --install /usr/bin/java java /opt/jdk/jdk*/bin/java 100
+update-alternatives --install /usr/bin/javac javac /opt/jdk/jdk*/bin/javac 100
+java -version
+javac -version
+exit
+
+
+#### alternative method: #####
+
+#sudo apt-add-repository ppa:webupd8team/java
+#sudo apt-get update
+#sudo apt-get install oracle-java8-installer
+## sudo apt-get install eclipse #necessary?
+
+#### eclipse ####################################################################
+
+sudo cp ~/Prog/Eclipsedownloads/eclipse-jee-mars-1-linux-gtk-x86_64.tar.gz /opt/
+cd /opt
+sudo tar -xvf /opt/eclipse-jee-mars-1-linux-gtk-x86_64.tar.gz
+sudo rm /opt/eclipse-jee-mars-1-linux-gtk-x86_64.tar.gz
+cd ~
+
+# put this in a file named eclipse.desktop
+
+cat > eclipse.desktop << "EOF"
+[Desktop Entry]
+Name=Eclipse 
+Type=Application
+Exec=env UBUNTU_MENUPROXY=0 eclipse
+Terminal=false
+Icon=eclipse
+Comment=Integrated Development Environment
+NoDisplay=false
+Categories=Development;IDE;
+Name[en]=Eclipse
+EOF
+
+sudo desktop-file-install eclipse.desktop
+sudo ln -s /opt/eclipse/eclipse /usr/local/bin/eclipse
+sudo cp /opt/eclipse/icon.xpm /usr/share/pixmaps/eclipse.xpm
+
+#sudo chown -R $USER:$USER /opt/eclipse/configuration/org.eclipse.osgi ????
+
+#### programming ################################################################
+
+sudo apt-get install vim
+cd ~/Prog
+tar -xjvf valgrind-3.11.0.tar.bz2
+cd valgrind-3.11.0
+./configure
+make
+sudo make install
+
+sudo apt-get install git
+sudo apt-get install gitg
+
+sudo apt-get install nasm
+sudo apt-get install libc6-dev-i386
+sudo apt-get install libc6-dbg:i386 #???
+
+sudo apt-get install python-matplotlib
+
+##### multimedia ################################################################
+
+sudo apt-get install chromium-browser
+sudo apt-get install skype
+sudo apt-get install vlc
+sudo apt-get install audacity
+sudo apt-get install audacious
+sudo apt-get install pepperflashplugin-nonfree
+sudo apt-get install gimp
+sudo apt-get install ubuntu-restricted-extras
+sudo apt-get install steam
+sudo apt-get install wine1.6 ### be warned! this is a large download!###
+
+#### window management ##########################################################
+
+sudo apt-get install gnome-session-flashback
+sudo apt-get install compiz
+sudo apt-get install compizconfig-settings-manager
+sudo apt-get install compiz-plugins-extra
+sudo apt-get install xfce4
