@@ -78,7 +78,10 @@ sudo apt-get install libc6-dbg:i386 #???
 sudo apt-get install python-matplotlib
 
 sudo apt-get install htop
-sudo apt-get intstall libsdl2.0-dev
+sudo apt-get install libsdl2.0-dev
+sudo apt-get install libopenmpi-dev
+sudo apt-get install openmpi-bin
+
 
 ##### multimedia ################################################################
 
