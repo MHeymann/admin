@@ -8,6 +8,7 @@ set softtabstop=4
 set shiftwidth=4          " for when you use << and >>
 set noexpandtab
 set autoindent            " on newline, keep current indentation
+set scrolloff=5
 
 colorscheme elflord
 
