@@ -1,6 +1,7 @@
 sudo apt-get update
 
 sudo apt-get install synaptic
+sudo apt-get install htop
 
 #### pynetkey  ##################################################################
 
@@ -13,7 +14,7 @@ gnome-open ~/Prog/pynetkey20120905.deb
 
 sudo su
 mkdir /opt/jdk
-tar -zxf ~/Prog/java/jdk*.tar.gz -C /opt/jdk
+tar -zxf /home/murray/Prog/java/jdk*.tar.gz -C /opt/jdk
 ls /opt/jdk
 update-alternatives --install /usr/bin/java java /opt/jdk/jdk*/bin/java 100
 update-alternatives --install /usr/bin/javac javac /opt/jdk/jdk*/bin/javac 100
@@ -31,11 +32,15 @@ exit
 
 #### eclipse ####################################################################
 
-sudo cp ~/Prog/Eclipsedownloads/eclipse-jee-mars-1-linux-gtk-x86_64.tar.gz /opt/
-cd /opt
-sudo tar -xvf /opt/eclipse-jee-mars-1-linux-gtk-x86_64.tar.gz
-sudo rm /opt/eclipse-jee-mars-1-linux-gtk-x86_64.tar.gz
-cd ~
+sudo su
+tar -zxvf /home/murray/Prog/Eclipsedownloads/eclipse*.tar.gz -C /opt
+exit
+
+#sudo cp ~/Prog/Eclipsedownloads/eclipse-jee-mars-1-linux-gtk-x86_64.tar.gz /opt/
+#cd /opt
+#sudo tar -xvf /opt/eclipse-jee-mars-1-linux-gtk-x86_64.tar.gz
+#sudo rm /opt/eclipse-jee-mars-1-linux-gtk-x86_64.tar.gz
+#cd ~
 
 # put this in a file named eclipse.desktop
 
@@ -70,6 +75,7 @@ sudo make install
 
 sudo apt-get install git
 sudo apt-get install gitg
+sudo apt-get install gitk
 
 sudo apt-get install nasm
 sudo apt-get install libc6-dev-i386
@@ -77,11 +83,14 @@ sudo apt-get install libc6-dbg:i386 #???
 
 sudo apt-get install python-matplotlib
 
-sudo apt-get install htop
-sudo apt-get install libsdl2.0-dev
 sudo apt-get install libopenmpi-dev
 sudo apt-get install openmpi-bin
 
+sudo apt-get install nodejs
+sudo apt-get install nodejs-legacy
+sudo apt-get install npm
+sudo npm install http-server -g
+sudo npm install express
 
 ##### multimedia ################################################################
 
@@ -90,11 +99,12 @@ sudo apt-get install skype
 sudo apt-get install vlc
 sudo apt-get install audacity
 sudo apt-get install audacious
-sudo apt-get install pepperflashplugin-nonfree
+#sudo apt-get install pepperflashplugin-nonfree
 sudo apt-get install gimp
 sudo apt-get install ubuntu-restricted-extras
 sudo apt-get install steam
 sudo apt-get install wine1.6 ### be warned! this is a large download!###
+sudo apt-get install texlive-full ### if you thought wine was big... ###
 
 #### window management ##########################################################
 
@@ -103,3 +113,7 @@ sudo apt-get install compiz
 sudo apt-get install compizconfig-settings-manager
 sudo apt-get install compiz-plugins-extra
 sudo apt-get install xfce4
+
+# xinput --list
+# xinput disable <touchscreen id>
+
