@@ -1,0 +1,68 @@
+[user]
+	email = heymann.murray@gmail.com
+	name = Murray Heymann
+[color]
+    diff = auto
+	branch = auto
+	status = auto
+	grep = auto
+	interactive = auto
+	showbranch = auto
+	ui = auto
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = green bold
+	changed = red bold
+	untracked = cyan bold
+[color "branch"]
+	current = white bold reverse
+	local = white bold
+	remote = green bold
+[core]
+	editor = vim
+[merge]
+	tool = kdiff3
+[diff]
+	tool = kdiff3
+	guitool = kdiff3
+[difftool]
+	prompt = false
+[rerere]
+	enabled = 1
+[merge]
+	tool = kdiff3
+[diff]
+	tool = kdiff3
+	guitool = kdiff3
+[difftool]
+	prompt = false
+[rerere]
+	enabled = 1
+[alias]
+	b = branch
+	c = checkout
+	co = commit
+	d = diff -b
+	dc = diff -b --cached
+	ds = diff -b --stat
+	s = status
+	ps = log --pretty=oneline origin..master
+	w = whatchanged -p
+	wo = whatchanged -p origin..
+	rlog = log --oneline --no-merges
+	gl = log --oneline --graph --decorate
+	st = stash
+	stl = stash list
+	stp = stash pop
+	unch = update-index --assume-unchanged
+	track = update-index --no-assume-unchanged
+	bl = blame -M -C -C -C
+	up = !sh -c 'git push origin HEAD:refs/for/$1' -
+	upmaster = push origin HEAD:refs/for/master
+	review = !sh -c 'refname=`printf refs/changes/%02d/$1/$2 $(($1 % 100))` && git fetch origin $refname && git checkout -b $1_$2 FETCH_HEAD' -
+[gitreview]
+	remote = origin
