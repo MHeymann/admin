@@ -12,7 +12,7 @@ set scrolloff=5
 
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme elflord
 
 set number
 set numberwidth=5
