@@ -33,7 +33,7 @@ exit
 #### eclipse ####################################################################
 
 sudo su
-tar -zxvf /home/murray/Prog/Eclipsedownloads/eclipse*.tar.gz -C /opt
+tar -zxvf /home/murray/prog/Eclipsedownloads/eclipse*.tar.gz -C /opt
 exit
 
 #sudo cp ~/Prog/Eclipsedownloads/eclipse-jee-mars-1-linux-gtk-x86_64.tar.gz /opt/
@@ -65,7 +65,7 @@ sudo cp /opt/eclipse/icon.xpm /usr/share/pixmaps/eclipse.xpm
 
 #### programming ################################################################
 
-sudo apt-get install vim
+sudo apt-get install vim-gtk
 cd ~/Prog
 tar -xjvf valgrind-3.11.0.tar.bz2
 cd valgrind-3.11.0
