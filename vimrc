@@ -2,7 +2,8 @@ set exrc
 set secure
 
 filetype plugin indent on
-set textwidth=75          " maximum of 80 characters per line
+set textwidth=80          " maximum of 80 characters per line
+set colorcolumn=81        " show the 81st line clearly
 set tabstop=4             " 1 tab = 4 spaces
 set softtabstop=4
 set shiftwidth=4          " for when you use << and >>
@@ -32,4 +33,5 @@ nnoremap <F7> :tabp<enter>
 nnoremap <F8> :tabn<enter>
 nnoremap <F9> :tabe 
 nnoremap <F10> :!cd .. && make<cr>
+map <special> <F12> :set filetype=singular<cr>
 
