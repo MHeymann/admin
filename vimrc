@@ -19,6 +19,10 @@ set number
 set numberwidth=5
 highlight LineNr term=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
+match Error /\s\n/
+set list
+set listchars=tab:\|\ 
+
 augroup project
     autocmd!
     autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
