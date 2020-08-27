@@ -1,17 +1,17 @@
-#! /bin/dash
+# /bin/dash
 
 sudo apt-get update -y
 
-sudo apt-get install -y synaptic
-sudo apt-get install -y htop
+sudo apt install -y synaptic \
+		    htop
 
-#### pynetkey  ##################################################################
+#### pynetkey ##################################################################
 
-sudo apt-get install -y python-appindicator
+#sudo apt-get install -y python-appindicator
 #sudo apt-get install libgnome2-bin
 #gnome-open ~/Prog/pynetkey20120905.deb
 
-#### java  ######################################################################
+#### java ######################################################################
 
 
 sudo mkdir /opt/jdk
@@ -30,16 +30,15 @@ javac -version
 #sudo apt-get install oracle-java8-installer
 ## sudo apt-get install eclipse #necessary?
 
-#### eclipse ####################################################################
+#### eclipse ###################################################################
 
 sudo tar -zxvf /home/murray/prog/Eclipsedownloads/eclipse*.tar.gz -C /opt
-
 
 # put this in a file named eclipse.desktop
 
 cat > eclipse.desktop << "EOF"
 [Desktop Entry]
-Name=Eclipse 
+Name=Eclipse
 Type=Application
 Exec=env UBUNTU_MENUPROXY=0 eclipse
 Terminal=false
@@ -54,12 +53,12 @@ sudo desktop-file-install eclipse.desktop
 sudo ln -s /opt/eclipse/eclipse /usr/local/bin/eclipse
 sudo cp /opt/eclipse/icon.xpm /usr/share/pixmaps/eclipse.xpm
 
-#sudo chown -R $USER:$USER /opt/eclipse/configuration/org.eclipse.osgi ????
+#### programming ###############################################################
 
-#### programming ################################################################
+sudo apt install -y gcc \
+		    vim-gtk \
+		    make
 
-sudo apt-get install -y vim-gtk
-sudo apt-get install -y make
 cd ~/prog
 tar -xjvf valgrind-3.13.0.tar.bz2
 cd valgrind-3.13.0
@@ -67,18 +66,15 @@ cd valgrind-3.13.0
 make
 sudo make install
 
-sudo apt-get install -y git
-sudo apt-get install -y gitg
-sudo apt-get install -y gitk
-
-sudo apt-get install -y nasm
-sudo apt-get install -y libc6-dev-i386
-sudo apt-get install -y libc6-dbg:i386 #???
-
-sudo apt-get install -y python-matplotlib
-
-sudo apt-get install -y libopenmpi-dev
-sudo apt-get install -y openmpi-bin
+sudo apt install -y git \
+		    gitg \
+		    gitk \
+		    nasm \
+		    libc6-dev-i386 \
+		    libc6-dbg:i386 \
+		    python3-matplotlib \
+		    libopenmpi-dev \
+		    openmpi-bin
 
 #sudo apt-get install nodejs
 #sudo apt-get install nodejs-legacy
@@ -86,25 +82,26 @@ sudo apt-get install -y openmpi-bin
 #sudo npm install http-server -g
 #sudo npm install express
 
-##### multimedia ################################################################
+##### multimedia ###############################################################
 
-sudo apt-get install -y chromium-browser
-sudo apt-get install -y vlc
-sudo apt-get install -y audacity
-sudo apt-get install -y audacious
-sudo apt-get install -y gimp
-sudo apt-get install -y ubuntu-restricted-extras
-sudo apt-get install -y steam
-sudo apt-get install -y wine1.6 ### be warned! this is a large download!###
-#sudo apt-get install -y texlive-full ### if you thought wine was big... ###
+sudo apt install -y chromium-browser \
+		    audacity \
+		    audacious \
+		    gimp \
+		    ubuntu-restricted-extras \
+		    steam \
+		    wine1.6
+#sudo apt install -y texlive-full ### Warning, HUGE download ###
 
-#### window management ##########################################################
+#### window management #########################################################
 
-sudo apt-get install -y gnome-session-flashback
+sudo apt install -y kdocker \
+		    gnome-session-flashback
+
 #sudo apt-get install compiz
 #sudo apt-get install compizconfig-settings-manager
 #sudo apt-get install compiz-plugins-extra
-sudo apt-get install -y xfce4
+#sudo apt-get install -y xfce4
 
 # xinput --list
 # xinput disable <touchscreen id>
