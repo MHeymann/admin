@@ -63,7 +63,7 @@ cd ~/prog
 tar -xjvf valgrind-3.13.0.tar.bz2
 cd valgrind-3.13.0
 ./configure
-make
+make -j $(nproc)
 sudo make install
 
 sudo apt install -y git \
@@ -90,7 +90,7 @@ sudo apt install -y chromium-browser \
 		    gimp \
 		    ubuntu-restricted-extras \
 		    steam \
-		    wine1.6
+		    wine
 #sudo apt install -y texlive-full ### Warning, HUGE download ###
 
 #### window management #########################################################
