@@ -2,12 +2,13 @@ set exrc
 set secure
 
 filetype plugin indent on
-set textwidth=80          " maximum of 80 characters per line
+"set textwidth=80          " maximum of 80 characters per line
+set textwidth=0           " no line wrapping
 set colorcolumn=81        " show the 81st line clearly
-set tabstop=8             " 1 tab = 8 spaces
-set softtabstop=8
-set shiftwidth=8          " for when you use << and >>
-set noexpandtab
+set tabstop=2             " 1 tab = <tabstop> spaces
+set softtabstop=2
+set shiftwidth=2          " for when you use << and >>
+set expandtab             " expandtab = replace tab with spaces
 set autoindent            " on newline, keep current indentation
 set scrolloff=5
 
@@ -19,10 +20,12 @@ set number
 set numberwidth=5
 highlight LineNr term=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
+set hlsearch
+
 match Error /\s\s*\n/
-set list
-set listchars=tab:>-
-highlight SpecialKey guifg=red ctermfg=red
+"set list
+"set listchars=tab:>\ 
+"highlight SpecialKey guifg=red ctermfg=yellow
 
 augroup project
     autocmd!
@@ -38,5 +41,5 @@ nnoremap <F7> :tabp<enter>
 nnoremap <F8> :tabn<enter>
 nnoremap <F9> :tabe 
 nnoremap <F10> :!cd .. && make<cr>
-map <special> <F12> :set filetype=singular<cr>
+"map <special> <F12> :set filetype=singular<cr> :set indentexpr=<cr>
 
