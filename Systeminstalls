@@ -1,9 +1,13 @@
 # /bin/dash
 
-sudo apt-get update -y
+sudo apt update
 
 sudo apt install -y synaptic \
-		    htop
+		                htop \
+                    command-not-found
+sudo apt update
+sudo update-command-not-found
+sudo apt update
 
 #### pynetkey ##################################################################
 
@@ -72,7 +76,6 @@ sudo apt install -y git \
 		    nasm \
 		    libc6-dev-i386 \
 		    libc6-dbg:i386 \
-		    python3-matplotlib \
 		    libopenmpi-dev \
 		    openmpi-bin
 
